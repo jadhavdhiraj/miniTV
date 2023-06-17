@@ -5,20 +5,21 @@ import VideoCard from "./VideoCard";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
-  const [filterdVideos,setFilterdVideos] = useState([])
+  
 
   useEffect(() => {
+    const getVideoData = async () => {
+    
+      const data = await fetch(YOUTUB_API_URL);
+      const json = await data.json();
+      
+      setVideos(json.items);
+      
+    };
     getVideoData();
   }, []);
 
-  const getVideoData = async () => {
-    
-    const data = await fetch(YOUTUB_API_URL);
-    const json = await data.json();
-    
-    setVideos(json.items);
-    setFilterdVideos(json.items)
-  };
+
   return videos.length < 1 ? null : (
     <div className="flex flex-wrap justify-evenly">
       {videos.map((item) => (

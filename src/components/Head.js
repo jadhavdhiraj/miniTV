@@ -17,7 +17,16 @@ const Head = () => {
   const [showSuggetions,setShowSuggetions] = useState(true)
 
   const searchCache = useSelector((store)=>store.search)
+ 
   useEffect(() => {
+    const getSearchSuggetion = async () => {
+      const URL = `${CORS_API_HOST+YOUTUBE_SEARCH_API }`;
+      const data = await fetch(URL + searchQuery);
+      const json = await data.json();
+      setSuggetions(json[1]);
+      dispatch(cacheResults({[searchQuery]:json[1]}))
+      
+    };
     const timer = setTimeout(() =>
     {if(searchCache[searchQuery]){
       setSuggetions(searchCache[searchQuery])
@@ -28,16 +37,9 @@ const Head = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [searchQuery]);
+  }, [searchQuery,dispatch,searchCache]);
 
-  const getSearchSuggetion = async () => {
-    const URL = `${CORS_API_HOST+YOUTUBE_SEARCH_API }`;
-    const data = await fetch(URL + searchQuery);
-    const json = await data.json();
-    setSuggetions(json[1]);
-    dispatch(cacheResults({[searchQuery]:json[1]}))
-    console.log(json[1]);
-  };
+  
 
   return (
     <div className="grid grid-flow-col shadow-lg py-4">

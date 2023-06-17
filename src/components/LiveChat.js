@@ -8,6 +8,7 @@ const LiveChat = () => {
     const dispatch = useDispatch()
     const chatMessages = useSelector(store=>store.chat.items)
     useEffect(()=>{
+        
         const t = setInterval(()=>{
             
 
@@ -20,7 +21,7 @@ const LiveChat = () => {
         return ()=>{
             clearInterval(t);
         }
-    },[])
+    },[dispatch])
   return (
     <div>
     <div className="mx-2 p-2 border border-black bg-slate-100 rounded-lg h-[400px] overflow-y-scroll flex flex-col-reverse ">
