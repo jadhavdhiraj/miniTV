@@ -4,7 +4,7 @@ import Comment from './Comment';
 
 const commentsData = [
     {
-      name: "Akshay Saini",
+      name: "Dhiraj Jadhav",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },
