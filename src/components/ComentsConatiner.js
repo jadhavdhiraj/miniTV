@@ -9,11 +9,11 @@ const commentsData = [
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "Dhiraj Jadhav",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [
         {
-          name: "Akshay Saini",
+          name: "Dhiraj Jadhav",
           text: "Lorem ipsum dolor sit amet, consectetur adip",
           replies: [],
         },
@@ -41,7 +41,7 @@ const commentsData = [
                       ],
                     },
                     {
-                      name: "Akshay Saini",
+                      name: "Dhiraj Jadhav",
                       text: "Lorem ipsum dolor sit amet, consectetur adip",
                       replies: [],
                     },
@@ -54,7 +54,7 @@ const commentsData = [
       ],
     },
     {
-      name: "Akshay Saini",
+      name: "Dhiraj Jadhav",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },
@@ -64,12 +64,12 @@ const commentsData = [
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "Dhiraj Jadhav",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },
     {
-      name: "Akshay Saini",
+      name: "Dhiraj Jadhav",
       text: "Lorem ipsum dolor sit amet, consectetur adip",
       replies: [],
     },
